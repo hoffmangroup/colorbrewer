@@ -5,7 +5,7 @@
 An easy way to get access to ColorBrewer schemes from within a Python program
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Copyright 2009 Michael M. Hoffman <mmh1@washington.edu>
 
