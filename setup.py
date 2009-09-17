@@ -2,7 +2,7 @@
 
 """colorbrewer: constants from Cynthia Brewer's ColorBrewer
 
-LONG_DESCRIPTION
+An easy way to get access to ColorBrewer schemes from within a Python program
 """
 
 __version__ = "0.1.0"
