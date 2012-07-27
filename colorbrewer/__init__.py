@@ -12,7 +12,6 @@ __version__ = "$Revision$"
 # Copyright 2009, 2012 Michael M. Hoffman <mmh1@washington.edu>
 
 from collections import defaultdict
-import sys
 
 from pkg_resources import resource_string
 from tabdelim import DictReader
@@ -61,12 +60,3 @@ def _load_schemes():
     globals().update(schemes)
 
 _load_schemes()
-
-def colorbrewer(*args):
-    pass
-
-def main(args=sys.argv[1:]):
-    return colorbrewer(*args)
-
-if __name__ == "__main__":
-    sys.exit(main())

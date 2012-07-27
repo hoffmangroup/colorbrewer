@@ -7,7 +7,7 @@ An easy way to get access to ColorBrewer schemes from within a Python program
 
 __version__ = "0.1.1"
 
-# Copyright 2009 Michael M. Hoffman <mmh1@washington.edu>
+# Copyright 2009, 2012 Michael M. Hoffman <mmh1@washington.edu>
 
 from ez_setup import use_setuptools
 use_setuptools()
@@ -31,7 +31,7 @@ if __name__ == "__main__":
           version=__version__,
           description=short_description,
           author="Michael Hoffman",
-          author_email="mmh1@washington.edu",
+          author_email="mmh1@uw.edu",
           url=url,
           download_url=download_url,
           classifiers=classifiers,
