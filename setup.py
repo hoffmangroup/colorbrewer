@@ -24,8 +24,6 @@ download_url = "%s%s-%s.tar.gz" % (url, name, __version__)
 classifiers = ["Natural Language :: English",
                "Programming Language :: Python"]
 
-install_requires = ["textinput"]
-
 if __name__ == "__main__":
     setup(name=name,
           version=__version__,
@@ -36,10 +34,7 @@ if __name__ == "__main__":
           download_url=download_url,
           classifiers=classifiers,
           long_description=long_description,
-          install_requires=install_requires,
           zip_safe=True,
-
-          # XXX: this should be based off of __file__ instead
           packages=find_packages("."),
           include_package_data=True
           )

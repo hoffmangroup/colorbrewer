@@ -14,7 +14,7 @@ __version__ = "$Revision$"
 from collections import defaultdict
 
 from pkg_resources import resource_string
-from tabdelim import DictReader
+from csv import DictReader, reader as csv_reader
 
 try:
     # Python 2.6+
@@ -22,14 +22,25 @@ try:
 except NameError:
     PKG = "colorbrewer"
 
+try:
+    # Python 2.6+
+    next
+except NameError:
+    def next(obj):
+        return obj.__next__()
+
 PKG_DATA = ".".join([PKG, "data"])
 
 RES_COLORBREWER = "ColorBrewer_all_schemes_RGBonly3.csv"
 
+DIALECT= "excel-tab"
+
 def read_colorbrewer(iterable):
     res = defaultdict(dict)
 
-    reader = DictReader(iterable)
+    iterator = iter(iterable)
+    fieldnames = next(csv_reader(iterator, DIALECT))
+    reader = DictReader(iterator, fieldnames, dialect = DIALECT)
 
     for row in reader:
         def int_cell(colname):
