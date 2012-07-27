@@ -4,12 +4,12 @@ from __future__ import division
 """
 __init__: DESCRIPTION
 
-data copyright Cynthia Brewer, see her license XXX
+data copyright Cynthia Brewer, Mark Harrower, and The Pennsylvania State University
 """
 
 __version__ = "$Revision$"
 
-# Copyright 2009 Michael M. Hoffman <mmh1@washington.edu>
+# Copyright 2009, 2012 Michael M. Hoffman <mmh1@washington.edu>
 
 from collections import defaultdict
 import sys
@@ -18,7 +18,7 @@ from pkg_resources import resource_string
 from tabdelim import DictReader
 
 try:
-    # Python 2.6
+    # Python 2.6+
     PKG = __package__
 except NameError:
     PKG = "colorbrewer"
