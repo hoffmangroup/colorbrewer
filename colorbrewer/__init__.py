@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 from __future__ import division
+from __future__ import absolute_import
+from __future__ import absolute_import
+__version__ = "$Revision: 9172 $"
+from six.moves import map
 
 """
 __init__: DESCRIPTION
@@ -7,7 +11,6 @@ __init__: DESCRIPTION
 data copyright Cynthia Brewer, Mark Harrower, and The Pennsylvania State University
 """
 
-__version__ = "$Revision$"
 
 # Copyright 2009, 2012 Michael M. Hoffman <mmh1@washington.edu>
 
@@ -63,7 +66,8 @@ def read_colorbrewer(iterable):
     return res
 
 def _load_schemes():
-    lines = resource_string(PKG_DATA, RES_COLORBREWER).splitlines()
+    lines = [x.decode() \
+             for x in resource_string(PKG_DATA, RES_COLORBREWER).splitlines()]
 
     schemes = read_colorbrewer(lines)
 

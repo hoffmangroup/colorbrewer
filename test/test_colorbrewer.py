@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 from __future__ import division
+from __future__ import absolute_import
+__version__ = "$Revision: 9170 $"
+
 
 """test_colorbrewer.py: test colorbrewer module
 """
-
-__version__ = "$Revision$"
 
 ## Copyright 2012 Michael M. Hoffman <mmh1@uw.edu>
 
