@@ -2,7 +2,7 @@
 from __future__ import division
 from __future__ import absolute_import
 from __future__ import absolute_import
-__version__ = "$Revision: 9172 $"
+__version__ = "$Revision$"
 from six.moves import map
 
 """
@@ -21,7 +21,7 @@ from csv import DictReader, reader as csv_reader
 
 try:
     # Python 2.6+
-    PKG = __package__
+    PKG = __name__
 except NameError:
     PKG = "colorbrewer"
 

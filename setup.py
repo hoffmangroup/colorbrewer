@@ -6,7 +6,7 @@ An easy way to get access to ColorBrewer schemes from within a Python program
 """
 
 from __future__ import absolute_import
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 # Copyright 2009, 2012 Michael M. Hoffman <mmh1@washington.edu>
 
@@ -25,6 +25,8 @@ download_url = "%s%s-%s.tar.gz" % (url, name, __version__)
 classifiers = ["Natural Language :: English",
                "Programming Language :: Python"]
 
+install_requires = ["six"]
+
 if __name__ == "__main__":
     setup(name=name,
           version=__version__,
@@ -37,5 +39,6 @@ if __name__ == "__main__":
           long_description=long_description,
           zip_safe=True,
           packages=find_packages("."),
+          install_requires=install_requires,
           include_package_data=True
           )
