@@ -66,8 +66,8 @@ def read_colorbrewer(iterable):
     return res
 
 def _load_schemes():
-    lines = [x.decode() \
-             for x in resource_string(PKG_DATA, RES_COLORBREWER).splitlines()]
+    lines = [line.decode() \
+             for line in resource_string(PKG_DATA, RES_COLORBREWER).splitlines()]
 
     schemes = read_colorbrewer(lines)
 
