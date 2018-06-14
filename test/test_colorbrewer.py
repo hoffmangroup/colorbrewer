@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-from __future__ import division
-from __future__ import absolute_import
-__version__ = "$Revision$"
+from __future__ import division, absolute_import
 
 """test_colorbrewer.py: test colorbrewer module
 """
