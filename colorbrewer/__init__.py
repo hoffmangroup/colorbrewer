@@ -1,5 +1,7 @@
 #!/usr/bin/env python
-from __future__ import division
+from __future__ import absolute_import, division
+__version__ = "0.1.2"
+from six.moves import map
 
 """
 __init__: DESCRIPTION
@@ -7,7 +9,6 @@ __init__: DESCRIPTION
 data copyright Cynthia Brewer, Mark Harrower, and The Pennsylvania State University
 """
 
-__version__ = "$Revision$"
 
 # Copyright 2009, 2012 Michael M. Hoffman <mmh1@washington.edu>
 
@@ -18,7 +19,7 @@ from csv import DictReader, reader as csv_reader
 
 try:
     # Python 2.6+
-    PKG = __package__
+    PKG = __name__
 except NameError:
     PKG = "colorbrewer"
 
@@ -63,7 +64,8 @@ def read_colorbrewer(iterable):
     return res
 
 def _load_schemes():
-    lines = resource_string(PKG_DATA, RES_COLORBREWER).splitlines()
+    lines = [line.decode() \
+             for line in resource_string(PKG_DATA, RES_COLORBREWER).splitlines()]
 
     schemes = read_colorbrewer(lines)
 
