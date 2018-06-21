@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from __future__ import absolute_import, division
-__version__ = "0.1.2"
+__version__ = "0.2.0"
 from six.moves import map
 
 """
