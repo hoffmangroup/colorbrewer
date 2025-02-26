@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 from __future__ import absolute_import, division
-__version__ = "0.2.0"
-from six.moves import map
+__version__ = "0.3.0"
 
 """
 __init__: DESCRIPTION
@@ -14,7 +13,7 @@ data copyright Cynthia Brewer, Mark Harrower, and The Pennsylvania State Univers
 
 from collections import defaultdict
 
-from pkg_resources import resource_string
+from importlib import resources
 from csv import DictReader, reader as csv_reader
 
 try:
@@ -63,13 +62,16 @@ def read_colorbrewer(iterable):
 
     return res
 
+
 def _load_schemes():
-    lines = [line.decode() \
-             for line in resource_string(PKG_DATA, RES_COLORBREWER).splitlines()]
+    scheme_file_path = resources.files(PKG_DATA).joinpath(RES_COLORBREWER)
+    lines = [line.decode()
+             for line in scheme_file_path.read_bytes().splitlines()]
 
     schemes = read_colorbrewer(lines)
 
     # copy schemes to module global variables
     globals().update(schemes)
+
 
 _load_schemes()
